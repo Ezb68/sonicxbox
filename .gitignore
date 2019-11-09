@@ -1,0 +1,10 @@
+node_modules
+.DS_Store
+yarn.lock
+dependencies
+tmp
+dist
+
+# for now
+CONTRIBUTING.md
+
