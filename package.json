@@ -1,7 +1,7 @@
 {
-  "name": "@sonicxchain/sonicxbox",
+  "name": "sonicxbox",
   "namespace": "SonicXChain",
-  "version": "0.1.1",
+  "version": "1.0.1",
   "description": "SonicXBox - Simple development framework",
   "dependencies": {
     "@truffle/contract-sources": "^0.1.6",
@@ -37,11 +37,11 @@
     "semver": "^6.1.1",
     "serve-static": "^1.10.0",
     "solc": "0.5.9",
+    "sonicxweb": "^2.8.1",
     "source-map-support": "^0.5.3",
     "spawn-args": "^0.1.0",
     "superagent": "^5.1.0",
     "temp": "^0.8.3",
-    "tronweb": "^2.7.2",
     "truffle-init": "^1.0.7",
     "web3-mock": "1.0.1",
     "yargs": "^8.0.2"
@@ -82,7 +82,7 @@
     "sonicx"
   ],
   "author": "SonicX",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/SonicXChain/sonicxbox/issues"
   },

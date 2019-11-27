@@ -1,14 +1,12 @@
-const port = process.env.HOST_PORT || 9090
-
 module.exports = {
   networks: {
     mainnet: {
       // Don't put your private key here:
-      privateKey: process.env.PRIVATE_KEY_MAINNET,
+      // privateKey: process.env.PRIVATE_KEY_MAINNET,
       /*
 Create a .env file (it must be gitignored) containing something like
 
-  export PRIVATE_KEY_MAINNET=4E7FECCB71207B867C495B51A9758B104B1D4422088A87F4978BE64636656243
+  export PRIVATE_KEY_MAINNET=D8B708BFFFA424473D83349CF4C6A2395E4436E065B60F0BF31E582281256D1C
 
 Then, run the migration with:
 
@@ -17,23 +15,21 @@ Then, run the migration with:
 */
       userFeePercentage: 100,
       feeLimit: 1e8,
-      fullHost: "https://api.sonicxgrid.io",
+      fullNode: "https://fullnode.sonicxhub.com",
+      solidityNode: "https://solnode.sonicxhub.com",
+      eventServer: "https://event.sonicxhub.com/",
+      fullHost: "https://fullnode.sonicxhub.com",
       network_id: "1"
     },
-    shasta: {
-      privateKey: process.env.PRIVATE_KEY_SHASTA,
-      userFeePercentage: 50,
-      feeLimit: 1e8,
-      fullHost: "https://api.shasta.sonicxgrid.io",
-      network_id: "2"
-    },
     development: {
-      // For sonicxtools/quickstart docker image
-      privateKey: 'da146374a75310b9666e834ee4ad0866d6f4035967bfc76217c5a495fff9f0d0',
-      userFeePercentage: 0,
+      privateKey: 'D8B708BFFFA424473D83349CF4C6A2395E4436E065B60F0BF31E582281256D1C',
+      userFeePercentage: 100,
       feeLimit: 1e8,
-      fullHost: 'http://127.0.0.1:' + port,
-      network_id: "9"
+      fullNode: "http://127.0.0.1:8190",
+      solidityNode: "http://127.0.0.1:8191",
+      eventServer: "http://127.0.0.1:8080",
+      fullHost: "http://127.0.0.1:8190",
+      network_id: "1"
     },
     compilers: {
       solc: {

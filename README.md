@@ -5,22 +5,22 @@ Simple development framework
 [SonicXBox Documentation](https://developers.sonicx.network/docs/sonicx-box-user-guide)
 
 ## Installation
-`npm install -g sonicxbox`
+`npm install sonicxbox`
 ## OS requirement
 - NodeJS 8.0+
 - Windows, Linux, or Mac OS X
 
 ## Features
 Initialize a Customer SonicXBox Project<br>
-`sonicxbox init`
+`npx sonicxbox init`
 <br>
 
 Download a dApp, ex: metacoin-box<br>
-`sonicxbox unbox metacoin`
+`npx sonicxbox unbox metacoin`
 <br>
 
 Contract Compiler<br>
-`sonicxbox compile`
+`npx sonicxbox compile`
 
 <br>
 To compile for all contracts, select --compile-all.
@@ -37,63 +37,40 @@ module.exports = {
   networks: {
     development: {
 // For sonicxtools/quickstart docker image
-      privateKey: 'da146374a75310b9666e834ee4ad0866d6f4035967bfc76217c5a495fff9f0d0',
+      privateKey: 'D8B708BFFFA424473D83349CF4C6A2395E4436E065B60F0BF31E582281256D1C',
       userFeePercentage: 30, // or consume_user_resource_percent
       feeLimit: 100000000, // or fee_limit
       originEnergyLimit: 1e8, // or origin_energy_limit
       callValue: 0, // or call_value
-      fullNode: "http://127.0.0.1:8090",
-      solidityNode: "http://127.0.0.1:8091",
-      eventServer: "http://127.0.0.1:8092",
+      fullNode: "http://127.0.0.1:8190",
+      solidityNode: "http://127.0.0.1:8191",
+      eventServer: "http://127.0.0.1:8080",
+      fullHost: "http://127.0.0.1:8190",
       network_id: "*"
     },
     mainnet: {
 // Don't put your private key here, pass it using an env variable, like:
-// PK=da146374a75310b9666e834ee4ad0866d6f4035967bfc76217c5a495fff9f0d0 sonicxbox migrate --network mainnet
+// PK=D8B708BFFFA424473D83349CF4C6A2395E4436E065B60F0BF31E582281256D1C npx sonicxbox migrate --network mainnet
       privateKey: process.env.PK,
       userFeePercentage: 30,
       feeLimit: 100000000,
-      fullNode: "https://api.sonicxgrid.io",
-      solidityNode: "https://api.sonicxgrid.io",
-      eventServer: "https://api.sonicxgrid.io",
+      fullNode: "https://fullnode.sonicxhub.com",
+      solidityNode: "https://solnode.sonicxhub.com",
+      eventServer: "https://event.sonicxhub.com/",
+      fullHost: "https://fullnode.sonicxhub.com",
       network_id: "*"
     }
   }
 };
 ```
-Starting from SonicXBox 2.1.9, if you are connecting to the same host for full and solidity nodes, and event server, you can set just `fullHost`:
-```
-module.exports = {
-  networks: {
-    development: {
-// For sonicxtools/quickstart docker image
-      privateKey: 'da146374a75310b9666e834ee4ad0866d6f4035967bfc76217c5a495fff9f0d0',
-      userFeePercentage: 30,
-      feeLimit: 100000000,
-      fullHost: "http://127.0.0.1:9090",
-      network_id: "*"
-    },
-    mainnet: {
-// Don't put your private key here, pass it using an env variable, like:
-// PK=da146374a75310b9666e834ee4ad0866d6f4035967bfc76217c5a495fff9f0d0 sonicxbox migrate --network mainnet
-      privateKey: process.env.PK,
-      userFeePercentage: 30,
-      feeLimit: 100000000,
-      fullHost: "https://api.sonicxgrid.io",
-      network_id: "*"
-    }
-  }
-};
-```
-Notice that the example above uses SonicX Quickstart >= 1.1.16, which exposes a mononode on port 9090.
 
 ## Contract Migration<br>
-`sonicxbox migrate`
+`npx sonicxbox migrate`
 <br>
 
 This command will invoke all migration scripts within the migrations directory. If your previous migration was successful, `sonicxbox migrate` will invoke a newly created migration. If there is no new migration script, this command will have no operational effect. Instead, you can use the option `--reset` to restart the migration script.<br> 
 
-`sonicxbox migrate --reset`
+`npx sonicxbox migrate --reset`
 <br>
 
 ## Parameters by contract (introduced in v2.2.2)
@@ -121,7 +98,7 @@ module.exports = function(deployer) {
 ## Start Console<br>
 This will use the default network to start a console. It will automatically connect to a TVM client. You can use `--network` to change this. <br>
 
-`sonicxbox console`<br>
+`npx sonicxbox console`<br>
 
 The console supports the `sonicxbox` command. For example, you can invoke `migrate --reset` in the console. The result is the same as invoking `sonicxbox migrate --reset` in the command. 
 <br>
@@ -138,11 +115,11 @@ The console supports the `sonicxbox` command. For example, you can invoke `migra
 
 To carry out the test, run the following command:<br>
 
-`sonicxbox test`<br>
+`npx sonicxbox test`<br>
 
 You can also run the test for a specific file：<br>
 
-`sonicxbox test ./path/to/test/file.js`<br>
+`npx sonicxbox test ./path/to/test/file.js`<br>
 
 Testing in SonicXBox is a bit different than in Truffle.
 Let's say we want to test the contract Metacoin (from the Metacoin Box that you can download with `sonicxbox unbox metacoin`):

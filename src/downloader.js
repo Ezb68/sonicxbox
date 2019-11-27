@@ -10,7 +10,7 @@ async function downloader(compilerVersion) {
 
   await fs.ensureDir(path.join(dir))
 
-  let res = await req.get(`https://sonicx-us.github.io/sonicx-solc-bin/bin/soljson_v${compilerVersion}.js`)
+  let res = await req.get(`https://tron-us.github.io/tron-solc-bin/bin/soljson_v${compilerVersion}.js`)
     .responseType('blob')
 
   if (res && res.body) {
