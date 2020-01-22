@@ -22,7 +22,7 @@ Then, run the migration with:
       network_id: "1"
     },
     development: {
-      privateKey: '960951D34032289501B99292B110CFC337D36EE1100CD1D4C30B0AAB7B0E9474',
+      privateKey: 'D8B708BFFFA424473D83349CF4C6A2395E4436E065B60F0BF31E582281256D1C',
       userFeePercentage: 100,
       feeLimit: 1e8,
 	  fullNode: "http://127.0.0.1:8190",
