@@ -15,22 +15,24 @@ Then, run the migration with:
 */
       userFeePercentage: 100,
       feeLimit: 1e8,
-	  fullNode: "https://fullnode.sonicxhub.com",
+	    fullNode: "https://fullnode.sonicxhub.com",
       solidityNode: "https://solnode.sonicxhub.com",
       eventServer: "https://event.sonicxhub.com/",
-	  fullHost: "https://fullnode.sonicxhub.com",
+	    fullHost: "https://fullnode.sonicxhub.com",
       network_id: "1"
     },
-    development: {
+    testnet: {
       privateKey: 'D8B708BFFFA424473D83349CF4C6A2395E4436E065B60F0BF31E582281256D1C',
+
       userFeePercentage: 100,
-      feeLimit: 1e8,
-	  fullNode: "http://127.0.0.1:8190",
-      solidityNode: "http://127.0.0.1:8191",
-      eventServer: "http://127.0.0.1:8080",
-	  fullHost: "http://127.0.0.1:8190",
-      network_id: "1"
+      feeLimit: 1e9,
+      originEnergyLimit: 1e7,
+      fullNode: "https://fullnode-testnet.sonicxhub.com",
+      solidityNode: "https://solnode-testnet.sonicxhub.com",
+      eventServer: "https://event-testnet.sonicxhub.com",
+      fullHost: "https://fullnode-testnet.sonicxhub.com",
+      network_id: "2"
     },
-	useZeroFourCompiler: true
+  	useZeroFourCompiler: true
   }
 }
